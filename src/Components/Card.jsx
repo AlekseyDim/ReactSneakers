@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 // function Card({pTitle, pPrice, pImg, pDrawerItems, pSetDrawerItems}) {
 
 //компонент карточки
