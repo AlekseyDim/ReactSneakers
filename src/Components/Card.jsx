@@ -29,7 +29,9 @@ const Card = ({pTitle, pPrice, pImg, pDrawerItems, pSetDrawerItems}) => {
     return(
         <div className="card">
         <div>
-            <img src='/img/unliked.png' width={32} height={32} alt="Unliked" />
+            {/* <img src='/img/unliked.png' width={32} height={32} alt="Unliked" /> */}
+            <img src='/img/heart.svg' width={32} height={32} alt="Unliked" />
+
         </div>
         <img width={133} height={112} src={pImg} alt="Sneakers" />
         <h5>{pTitle}</h5>

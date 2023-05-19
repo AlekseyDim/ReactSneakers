@@ -33,6 +33,8 @@ function App() {
 
   const [drawerItems, setDrawerItems] = React.useState([]);
 
+  const [orderItems, setOrderItems] = React.useState([]);
+
   // function getCartItems(pDrawerItems){
 
   //   setDrawerItems(pDrawerItems)
@@ -64,7 +66,7 @@ function App() {
       </ul>
     </header>
    
-   <Drawer drawerItems={drawerItems}  isVisible={isVisible} setIsVisible={setIsVisible}/>
+   <Drawer drawerItems={drawerItems} setDrawerItems={setDrawerItems} isVisible={isVisible} setIsVisible={setIsVisible} orderItems={orderItems} setOrderItems={setOrderItems} />
        
     <div className="content">
           <h1>Все кроссовки</h1>
