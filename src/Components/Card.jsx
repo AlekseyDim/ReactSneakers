@@ -1,4 +1,7 @@
+import { type } from '@testing-library/user-event/dist/type';
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
 
 // function Card({pTitle, pPrice, pImg, pDrawerItems, pSetDrawerItems}) {
 
@@ -8,6 +11,8 @@ const Card = ({pTitle, pPrice, pImg, pDrawerItems, pSetDrawerItems}) => {
     // const[isAdded, setAdded] = React.useState(false)
     const[itemsCount, setItemsCount] = React.useState(0)
 
+    const dispatch = useDispatch();
+    const cash = useSelector(state=>state.cash)
 
     function onAddToCart(){
         // setAdded(!isAdded)
@@ -15,13 +20,18 @@ const Card = ({pTitle, pPrice, pImg, pDrawerItems, pSetDrawerItems}) => {
         // if(pDrawerItems.indexOf({pTitle, pImg, pPrice}) != -1){
         //     pDrawerItems.filter((elem) => elem !== {pTitle, pImg, pPrice})
         // }
+
         pSetDrawerItems([...pDrawerItems, {pImg, pPrice, pTitle}])
+        // console.log(pDrawerItems)
+        dispatch({type: "ADD_CASH", payload: pPrice })
         // getCartItems(pDrawerItems)
         setItemsCount(itemsCount + 1)
     }
 
     function deleteItems(pTitle){
         setItemsCount(0)
+        dispatch({type: "MINUS_CASH", payload: pPrice })
+
         
         pSetDrawerItems(pDrawerItems.filter((obj)=>pTitle !== obj.pTitle))
     }
