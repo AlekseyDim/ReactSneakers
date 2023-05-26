@@ -330,3 +330,7 @@ li {
 .cursor{
   cursor: pointer;
 }
+.link{
+  color: black;
+  text-decoration-line:none ;
+}
