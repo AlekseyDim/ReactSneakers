@@ -11,7 +11,7 @@ function Header({ isVisible, setIsVisible }) {
     }
 
     const cash = useSelector(state=>state.cash)
-    console.log(cash)
+    // console.log(cash)
 
     return (
         <header>

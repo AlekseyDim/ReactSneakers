@@ -10,7 +10,8 @@ import { Provider } from 'react-redux';
 
 
 const defaultState = {
-  cash: 0
+  cash: 0,
+  inputValue: ''
 }
 
 
@@ -21,7 +22,13 @@ function reducer(state = defaultState, action) {
 
     case "MINUS_CASH":
       return { ...state, cash: 0 };
-      // return { ...state, cash: state.cash - action.payload };
+    // return { ...state, cash: state.cash - action.payload };
+
+    case "CHANGE_INPUT":
+      return { ...state, inputValue: state.inputValue = action.payload };
+
+    case "CLEAR_INPUT":
+      return { ...state, inputValue: '' };
 
     default:
       return state;
@@ -35,7 +42,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
   <BrowserRouter>
-    <Provider store={store}>
+    <Provider store={store} >
       <App />
     </Provider>
   </BrowserRouter>
