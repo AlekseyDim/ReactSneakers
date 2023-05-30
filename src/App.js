@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home'
 import Orders from './Pages/Orders'
 import Form from './Pages/Form'
+import NotFound from './Pages/NotFound'
 
 
 
@@ -56,7 +57,7 @@ function App() {
         <Route path='/orders' element={<Orders isVisible={isVisible} setIsVisible={setIsVisible} drawerItems={drawerItems} orderItems={orderItems} setOrderItems={setOrderItems} />}/>
 
         <Route path='/form' element={<Form/>}/>
-        
+        <Route path='*'element={<NotFound/>} />
       </Routes>
     </div>
     //   <div className="wrapper">
