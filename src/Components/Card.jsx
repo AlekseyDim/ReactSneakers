@@ -11,6 +11,8 @@ const Card = ({pTitle, pPrice, pImg, pDrawerItems, pSetDrawerItems}) => {
     // const[isAdded, setAdded] = React.useState(false)
     const[itemsCount, setItemsCount] = React.useState(0)
 
+    const[countFavorites, setCountFavorites] = React.useState(false)
+
     const dispatch = useDispatch();
     const cash = useSelector(state=>state.cash)
 
@@ -36,11 +38,22 @@ const Card = ({pTitle, pPrice, pImg, pDrawerItems, pSetDrawerItems}) => {
         pSetDrawerItems(pDrawerItems.filter((obj)=>pTitle !== obj.pTitle))
     }
 
+    function onAddToFavorites(Img, Price, Title){
+        setCountFavorites(!countFavorites);
+        dispatch({type: "ADD_FAVORITES", payload: {img: Img, price: Price, title:Title} })
+
+        console.log(Title)
+        console.log(Img)
+
+        
+
+    }
+
     return(
         <div className="card">
         <div>
             {/* <img src='/img/unliked.png' width={32} height={32} alt="Unliked" /> */}
-            <img src='/img/heart.svg' width={32} height={32} alt="Unliked" />
+            <img className='heart' onClick={()=> onAddToFavorites(pImg, pPrice, pTitle)} src={countFavorites? '/img/heart-red.png' :'/img/heart.svg'} width={32} height={32} alt="Unliked" />
 
         </div>
         <img width={133} height={112} src={pImg} alt="Sneakers" />

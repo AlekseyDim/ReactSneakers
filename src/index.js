@@ -11,7 +11,8 @@ import { Provider } from 'react-redux';
 
 const defaultState = {
   cash: 0,
-  inputValue: ''
+  inputValue: '',
+  favorites:[]
 }
 
 
@@ -29,6 +30,9 @@ function reducer(state = defaultState, action) {
 
     case "CLEAR_INPUT":
       return { ...state, inputValue: '' };
+
+    case "ADD_FAVORITES":
+      return{ ...state, favorites: [...state.favorites, action.payload] };
 
     default:
       return state;

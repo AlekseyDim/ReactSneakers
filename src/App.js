@@ -5,6 +5,7 @@ import Home from './Pages/Home'
 import Orders from './Pages/Orders'
 import Form from './Pages/Form'
 import NotFound from './Pages/NotFound'
+import Favorites from './Pages/Favorites';
 
 
 
@@ -19,7 +20,7 @@ const sneakersArr = [
   {
     title: 'Мужские кроссовки Nike Air Max',
     price: 15600,
-    imageUrl: './img/sneakers/2.png'
+    imageUrl: '/img/sneakers/2.png'
   },
   {
     title: 'Мужские кроссовки Nike Blazer',
@@ -29,7 +30,7 @@ const sneakersArr = [
   {
     title: 'Мужские кроссовки Puma X Aka',
     price: 8999,
-    imageUrl: './img/sneakers/4.png'
+    imageUrl: '/img/sneakers/4.png'
   }
 ];
 
@@ -58,6 +59,7 @@ function App() {
 
         <Route path='/form' element={<Form/>}/>
         <Route path='*'element={<NotFound/>} />
+        <Route path='/favorites' element={<Favorites/>}/>
       </Routes>
     </div>
     //   <div className="wrapper">
