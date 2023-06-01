@@ -43,10 +43,6 @@ function App() {
 
   const [orderItems, setOrderItems] = React.useState([]);
 
-  // function getCartItems(pDrawerItems){
-
-  //   setDrawerItems(pDrawerItems)
-  // }
 
   return (
 
@@ -59,7 +55,7 @@ function App() {
 
         <Route path='/form' element={<Form/>}/>
         <Route path='*'element={<NotFound/>} />
-        <Route path='/favorites' element={<Favorites/>}/>
+        <Route path='/favorites' element={<Favorites />}/>
       </Routes>
     </div>
     //   <div className="wrapper">

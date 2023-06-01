@@ -9,24 +9,21 @@ function Favorites() {
     return (
         <>
             <Header />
+            <div className="Favorites" >
             <h2>Мои любимые товары:</h2>
+            {favorites.map((obj, index) =>
+                <div className="favorites" key={index}>
 
-            <div >
-                {favorites.map((obj, index) =>
-                    <div key={index}>
-                        <p>{obj.title}</p>
-
-                        <div style={{ backgroundImage: `url(${obj.img} )` }}
-                            className="favoriteImg"
-                            >
-                        </div>
-                        <div>
-                            <b>{obj.price} руб.</b>
-                        </div>
+                    <div style={{ backgroundImage: `url(${obj.img} )` }} className="favoriteImg">
                     </div>
-                )
-                }
-            </div>
+                    <div>
+                        <p>{obj.title}</p>
+                        <b>{obj.price} руб.</b>
+                    </div>
+                </div>
+            )
+            }
+        </div>
 
         </>
     )

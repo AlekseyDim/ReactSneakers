@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 
 
-function Home({ orderItems, setOrderItems, isVisible, setIsVisible, drawerItems, setDrawerItems, sneakersArr }) {
+function Home({ orderItems, setOrderItems, isVisible, setIsVisible, drawerItems, setDrawerItems, sneakersArr}) {
 
   const dispatch = useDispatch();
   const inputValue = useSelector(state=>state.inputValue)
@@ -43,7 +43,8 @@ function Home({ orderItems, setOrderItems, isVisible, setIsVisible, drawerItems,
         <div className="ds-f">
 
           {/* {sneakersArr.map((elem, index) =>  <Card pDrawerItems={drawerItems} pSetDrawerItems={setDrawerItems} pTitle={elem} key={index}/>)} */}
-          {sneakersArr.filter((elem) => elem.title.toLowerCase().includes(inputValue.toLowerCase())).map((elem, index) => <Card pDrawerItems={drawerItems} pSetDrawerItems={setDrawerItems} pTitle={elem.title} pPrice={elem.price} pImg={elem.imageUrl} key={index} />)}
+          {sneakersArr.filter((elem) => elem.title.toLowerCase().includes(inputValue.toLowerCase())).map((elem, index) => <Card pDrawerItems={drawerItems} pSetDrawerItems={setDrawerItems} 
+              pTitle={elem.title} pPrice={elem.price} pImg={elem.imageUrl} key={index} />)}
 
 
         </div>
