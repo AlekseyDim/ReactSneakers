@@ -65,7 +65,7 @@ function Drawer(props){
             <li>
                 <span>Налог 5%:</span>
                 <div></div>
-                <b>{cash} руб. </b>
+                <b>{Math.floor(cash * 0.05)}  руб. </b>
             </li>
             </ul>
             <button className="greenButton" onClick={()=>makeOrder(props.drawerItems)}>
